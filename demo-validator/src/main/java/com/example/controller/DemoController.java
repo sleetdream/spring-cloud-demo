@@ -1,13 +1,16 @@
 package com.example.controller;
 
-import com.example.consts.ResultConsts;
 import com.example.exception.DefaultException;
+import com.example.model.UserInfo;
 import com.example.validator.PwdCheck;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 
 @Validated
@@ -36,17 +39,17 @@ public class DemoController {
     }
 
     @GetMapping(value = "/ok")
-    public ResultConsts ok(){
-        return ResultConsts.OK;
+    public void ok(){ }
+    @PostMapping(value = "post")
+    public String post(@PwdCheck(message = "密码格式错误" ) String pwd){
+        return "ok";
     }
 
-    @GetMapping(value = "/isnull")
-    public String isnull(){
-        return null;
+    @PostMapping(value = "/userinfo")
+    public String userInfo(@Valid UserInfo userInfo, BindingResult result){
+        return "ok";
     }
 
-    @GetMapping(value = "/blank")
-    public String isblank(){
-        return "";
-    }
+
+
 }

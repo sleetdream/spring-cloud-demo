@@ -8,34 +8,33 @@ import com.example.consts.ResultConsts;
  */
 public class ResultUtils {
 
-    public static String getResult(ResultConsts apiResultConsts){
+    public static Object getResult(ResultConsts resultConsts){
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("code", apiResultConsts.getCode());
-        jsonObject.put("msg", apiResultConsts.getMsg());
-        return jsonObject.toJSONString();
+        jsonObject.put("code", resultConsts.getCode());
+        jsonObject.put("msg", resultConsts.getMsg());
+        return jsonObject;
     }
 
-    public static String getResult(ResultConsts apiResultConsts, Object data){
+    public static Object getResult(ResultConsts resultConsts, Object data){
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("code", apiResultConsts.getCode());
-        jsonObject.put("msg", apiResultConsts.getMsg());
+        jsonObject.put("code", resultConsts.getCode());
+        jsonObject.put("msg", resultConsts.getMsg());
         jsonObject.put("data", data);
-        return jsonObject.toJSONString();
+        return jsonObject;
     }
 
-    public static String getResult(Integer code, String msg){
+    public static Object getResult(Integer code, String msg){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("code", code);
         jsonObject.put("msg", msg);
-        return jsonObject.toJSONString();
+        return jsonObject;
     }
 
-    public static String getResult(Integer code, String msg, Object data){
+    public static Object getResult(Integer code, String msg, Object data){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("code", code);
         jsonObject.put("msg", msg);
         jsonObject.put("data", data);
-        return jsonObject.toJSONString();
+        return jsonObject;
     }
-
 } 

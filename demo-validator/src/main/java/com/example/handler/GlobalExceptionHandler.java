@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ExceptionHandler(value = DefaultException.class)
     public Object ExceptionHandler(DefaultException ex){
-        return ResultUtils.getResult(ex.getCode(),ex.getMessage());
+        return ResultUtils.getResult(ex.getCode(),ex.getMsg());
     }
 
     @ResponseBody
