@@ -31,6 +31,12 @@ public class ResultHandler implements ResponseBodyAdvice{
             PutMapping.class
     };
 
+    /**
+     * 对所有RestController的接口方法进行拦截
+     * @param returnType
+     * @param converterType
+     * @return
+     */
     @Override
     public boolean supports(MethodParameter returnType, Class converterType){
         AnnotatedElement element = returnType.getAnnotatedElement();
@@ -43,6 +49,7 @@ public class ResultHandler implements ResponseBodyAdvice{
         ObjectMapper mapper = mapperThreadLocal.get();
         response.getHeaders().setContentType(MediaType.APPLICATION_JSON);
 
+        /*根据返回数据类型，封装返回值*/
         if (body instanceof ResultConsts){
             return ResultUtils.getResult((ResultConsts) body);
         }

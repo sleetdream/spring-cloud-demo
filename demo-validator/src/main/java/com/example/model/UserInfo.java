@@ -5,7 +5,7 @@ import com.example.consts.ValidatorConsts;
 import javax.validation.constraints.NotBlank;
 
 /**
- * 参数实体类
+ * 实体类参数
  */
 public class UserInfo {
     @NotBlank(message = ValidatorConsts.NOTBLANK_ID)

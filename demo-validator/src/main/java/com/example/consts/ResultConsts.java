@@ -2,6 +2,7 @@ package com.example.consts;
 
 /**
  * 接口返回结果，错误提示
+ * 参考 https://blog.csdn.net/alisonyu/article/details/82833413
  */
 public enum ResultConsts {
     SYSERR(-1,"系统错误"),

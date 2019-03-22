@@ -1,10 +1,12 @@
 package com.example.exception;
 
 /**
- * 自定义异常
+ * 自定义异常，对应ResultConsts
  */
 public class DefaultException extends RuntimeException{
+    //异常码
     private Integer code;
+    //异常信息
     private String msg;
 
     public DefaultException(Integer code, String msg){
